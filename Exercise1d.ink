@@ -22,14 +22,29 @@ VAR time = 0 //  0 Morning, 1 Noon, 2 Night
 
 == seashore ==
 You are sitting on the beach. 
+It is {advance_time() } 
 
-+ [Wait] -> seashore
++ [Stroll down the beach] -> seashore
++[Enter the maple forest] -> forest
 -> DONE
 
 == beach2 ==
 This is further down the beach.
 
-+ [Move back up the beach] -> seashore
+It is {advance_time() } 
+*{time == 1} [Pick up some seashells]-> shells
++ [Stroll back up the beach] -> seashore
+== forest ==
+A golden shining forest.
+It is {advance_time()}.
++[Go deeper] -> village
++[Return] -> beach2
+
+== village==
+A peaceful village
+It is {advance_time()}
+
++[leave] -> forest
 
 == shells ==
 You pick up the shells
